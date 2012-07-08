@@ -1,4 +1,8 @@
 module SpreeSitemapGenerator::SpreeDefaults
+  include ActionView::Helpers
+  include ActionDispatch::Routing
+  include Spree::Core::Engine.routes.url_helpers
+
   def default_url_options
     {:host => SitemapGenerator::Sitemap.default_host}
   end 
