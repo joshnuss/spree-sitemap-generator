@@ -29,5 +29,5 @@ SitemapGenerator::Sitemap.add_links do |sitemap|
   sitemap.add add_account
   sitemap.add add_password_reset
   sitemap.add add_taxons
-  sitemap.add add_sproducts
+  sitemap.add add_products
 end
