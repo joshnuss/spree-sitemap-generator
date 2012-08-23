@@ -30,4 +30,5 @@ SitemapGenerator::Sitemap.add_links do |sitemap|
   sitemap.add add_password_reset
   sitemap.add add_taxons
   sitemap.add add_products
+  sitemap.add add_pages
 end
