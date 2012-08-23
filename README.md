@@ -53,9 +53,10 @@ Features
 - Easily add additional sitemaps for pages you add to your spree site
 - Supports Amazon S3 and other hosting services
 - Thin wrapper over battle tested sitemap generator
+- Supports adding spree_essential_cms pages to the sitemap
 
 Special Thanks
-=====
+==============
 - The creators of the sitemap_generator gem
 - jackkinsella
 
