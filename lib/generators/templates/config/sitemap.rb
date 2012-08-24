@@ -25,11 +25,11 @@ SitemapGenerator::Sitemap.add_links do |sitemap|
   #     sitemap.add article_path(article), :lastmod => article.updated_at
   #   end
 
-  sitemap.add_login
-  sitemap.add_signup
-  sitemap.add_account
-  sitemap.add_password_reset
-  sitemap.add_taxons
-  sitemap.add_products
-  sitemap.add_pages
+  add_login
+  add_signup
+  add_account
+  add_password_reset
+  add_taxons
+  add_products
+  add_pages
 end
