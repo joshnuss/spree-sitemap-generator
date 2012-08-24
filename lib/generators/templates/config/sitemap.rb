@@ -24,11 +24,12 @@ SitemapGenerator::Sitemap.add_links do |sitemap|
   #   Article.find_each do |article|
   #     sitemap.add article_path(article), :lastmod => article.updated_at
   #   end
-  sitemap.add add_login
-  sitemap.add add_signup
-  sitemap.add add_account
-  sitemap.add add_password_reset
-  sitemap.add add_taxons
-  sitemap.add add_products
-  sitemap.add add_pages
+
+  sitemap.add_login
+  sitemap.add_signup
+  sitemap.add_account
+  sitemap.add_password_reset
+  sitemap.add_taxons
+  sitemap.add_products
+  sitemap.add_pages
 end

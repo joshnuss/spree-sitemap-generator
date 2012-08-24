@@ -36,11 +36,9 @@ module SpreeSitemapGenerator::SpreeDefaults
 
   def add_pages(options={})
     # https://github.com/citrus/spree_essential_cms
-    if gem_available? 'spree_essential_cms'
-      Spree::Page.active.each do |page|
-        add(page.path, options.merge(:lastmod => page.updated_at))
-      end
-    end
+    Spree::Page.active.each do |page|
+      add(page.path, options.merge(:lastmod => page.updated_at))
+    end if gem_available? 'spree_essential_cms'
   end
 
   def add_taxons(options={})
