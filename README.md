@@ -44,7 +44,7 @@ Check out the README for the sitemap_generator gem at:
 http://github.com/kjvarga/sitemap_generator
 
 Features
-=====
+========
 - Notifies search engine of new sitemaps (Google, Yahoo, Ask, Bing)
 - Supports large huge product catalogs
 - Adheres to 0.9 Sitemap protocol specification
@@ -53,7 +53,8 @@ Features
 - Easily add additional sitemaps for pages you add to your spree site
 - Supports Amazon S3 and other hosting services
 - Thin wrapper over battle tested sitemap generator
-- Supports adding spree_essential_cms pages to the sitemap
+- Supports adding [spree_essential_cms](https://github.com/citrus/spree_essential_cms) pages to the sitemap
+- Creates video sitemap data for [spree_videos](https://github.com/iloveitaly/Spree-Videos) and youtube videos embedded in custom [spree_taxon_splash](https://github.com/iloveitaly/spree_taxon_splash) pages
 
 Special Thanks
 ==============
