@@ -110,6 +110,7 @@ module Spree
           ).merge({
             :thumbnail_loc => "http://img.youtube.com/vi/#{youtube_id}/0.jpg",
             :player_loc => "http://www.youtube.com/v/#{youtube_id}",
+            :autoplay => "ap=1"
           })
         end
 
