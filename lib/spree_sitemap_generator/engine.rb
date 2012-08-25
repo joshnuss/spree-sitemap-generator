@@ -25,12 +25,7 @@ module SpreeSitemapGenerator
         end
       end
 
-      require 'spree_sitemap_generator/spree_defaults'
-      SitemapGenerator::Interpreter.send :include, SpreeSitemapGenerator::SpreeDefaults
-
-      Dir.glob(File.join(File.dirname(__FILE__), "../../app/**/*_decorator*.rb")) do |c|
-        Rails.application.config.cache_classes ? require(c) : load(c)
-      end
+      SitemapGenerator::Interpreter.send :include, Spree::SitemapGenerator::Defaults
     end
 
     config.to_prepare &method(:activate).to_proc
