@@ -30,7 +30,7 @@ module Spree
       def add_products(options={})
         active_products = Spree::Product.active
 
-        add(products_path, options.merge(:lastmod => active_products.last_updated))
+        add(products_path, options.merge(:lastmod => last_updated(active_products)))
 
         active_products.each do |product|
           opts = options.merge(:lastmod => product.updated_at, :priority => priority(product))
@@ -68,7 +68,7 @@ module Spree
       end
 
       def add_taxon(taxon, options={})
-        opts = options.merge(:lastmod => taxon.products.last_updated, :priority => priority(taxon))
+        opts = options.merge(:lastmod => last_updated(taxon.products), :priority => priority(taxon))
 
         if gem_available? 'spree_taxon_splash' and taxon.taxon_splash.present?
           @video_exclude ||= []
@@ -117,7 +117,17 @@ module Spree
         def priority(object)
           0.5
         end
-      end
+
+        def last_updated(object)
+          if object.is_a? ActiveRecord::Relation
+            return object.order('updated_at DESC').first.try :updated_at
+          elsif object.kind_of? ActiveRecord::Base
+            return object.last_updated
+          end
+
+          Time.now
+        end
+    end
   end
 end
 

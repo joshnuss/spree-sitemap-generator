@@ -12,19 +12,6 @@ module SpreeSitemapGenerator
     end
 
     def self.activate
-      ActiveRecord::Relation.class_eval do
-        def last_updated
-          last_update = order('updated_at DESC').first
-          last_update.try(:updated_at) 
-        end 
-      end
-
-      ActiveRecord::Base.class_eval do
-        def self.last_updated
-          scoped.last_updated
-        end
-      end
-
       SitemapGenerator::Interpreter.send :include, Spree::SitemapGenerator::Defaults
     end
 
