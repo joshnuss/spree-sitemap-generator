@@ -40,11 +40,9 @@ module SpreeSitemapGenerator::SpreeDefaults
         # https://sites.google.com/site/webmasterhelpforum/en/faq-video-sitemaps#multiple-pages
         # @video_exclude += product.videos.map(&:youtube_ref)
 
-        video_list = product.videos.select { |v| !@video_exclude.include? v.youtube_ref }.map do |v|
-          video_options(v.youtube_ref, product)
-        end
-
-        opts.merge!(:video => video_list) if video_list.present?
+        # don't include all the videos on the page otherwise you'll need duplicate title warnings
+        primary_video = product.videos.select { |v| !@video_exclude.include? v.youtube_ref }.first
+        opts.merge!(:video => [video_options(primary_video.youtube_ref, product)]) if primary_video.present?
       end
 
       add(product_path(product), opts)
